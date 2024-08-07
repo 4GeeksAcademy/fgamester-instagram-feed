@@ -1,0 +1,11 @@
+.fa-instagram {
+    font-size: 30px;
+}
+
+.nav-link{
+    color: grey !important;
+}
+.nav-link.active{
+    color: blue !important;
+}
+

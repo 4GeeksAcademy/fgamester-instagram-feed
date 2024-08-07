@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Instagram Feed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- barra de navegación -->
+    <nav class="navbar navbar-light bg-light py-3 px-5">
+        <div class="container-fluid">
+            <div class="d-flex">
+                <i class="fa-brands fa-instagram"></i>
+                <h4 class="h4 ms-1">Instagram</h4>
+            </div>
+            <div class="d-flex align-right justify-content-end">
+                <!-- button que activa el modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                    data-bs-target="#new-post-modal">Create a new
+                    post</button>
+                <!-- opciones de la cuenta para el usuario -->
+                <div class="dropdown ms-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" id="settings-btn">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <!-- listado de opciones -->
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settings-btn">
+                        <li><button class="dropdown-item">Profile</button></li>
+                        <li><button class="dropdown-item">Accesibility</button></li>
+                        <li class="pb-2"><button class="dropdown-item">Privacy and Data</button></li>
+                        <li class="border-top pt-2"><button class="dropdown-item text-danger">Log out</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- modal body -->
+    <div class="modal fade" id="new-post-modal" tabindex="-1" aria-labelledby="new-post-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Caption:</h6>
+                    <!-- textarea para el caption -->
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                            style="resize: none;"></textarea>
+                        <label for="floatingTextarea">Add the caption of your post here</label>
+                    </div>
+                    <!-- modal's button -->
+                    <div class="container mx-0 px-0 my-3">
+                        <button type="button" class="btn btn-light border"><i class="fa-solid fa-camera"></i></button>
+                        <button type="button" class="btn btn-light border"><i
+                                class="fa-solid fa-location-dot"></i></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- container fluid que proyectará el contenido de ig -->
+    <div class="container-fluid">
+        <!-- nav para seleccionar tipo de visualización -->
+        <nav>
+            <div class="nav nav-tabs d-flex justify-content-center" id="ig-tab" role="tablist">
+                <button class="nav-link active" id="cell-view-tab" data-bs-toggle="tab" data-bs-target="#cell-view"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i
+                        class="fa-solid fa-table-cells"></i></button>
+                <button class="nav-link" id="feed-view-tab" data-bs-toggle="tab" data-bs-target="#feed-view"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i
+                        class="fa-solid fa-square"></i></button>
+            </div>
+        </nav>
+        <!-- contenido para ig -->
+        <div class="tab-content" id="ig-tabContent">
+            <!-- contenido en caso de cellview -->
+            <div class="tab-pane fade show active" id="cell-view" role="tabpanel" aria-labelledby="cell-view-tab">
+                <!-- row 1 -->
+                <div class="row">
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/123/800">
+                    </div>
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/432/800">
+                    </div>
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/951/800">
+                    </div>
+                </div>
+                <!-- row 2 -->
+                <div class="row">
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/654/800">
+                    </div>
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/464/800">
+                    </div>
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/156/800">
+                    </div>
+                </div>
+                <!-- row 3 -->
+                <div class="row">
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/426/800">
+                    </div>
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/953/800">
+                    </div>
+                    <div class="col-4 p-1">
+                        <img class="img-fluid w-100" src="https://picsum.photos/id/456/800">
+                    </div>
+                </div>
+            </div>
+            <!-- contenido en caso de feedview -->
+            <div class="tab-pane fade" id="feed-view" role="tabpanel" aria-labelledby="feed-view-tab">
+                <div class="container-fluid feed-post-area p-5">
+                    <!-- post 1 -->
+                    <div class="container post-box border col-6 px-0 mb-4">
+                        <div class="container post-header d-flex justify-content-between">
+                            <h3 class="my-2">I love raining days</h3>
+                            <p class="post-date mt-2">08-01</p>
+                        </div>
+                        <div class="container post-body p-0">
+                            <img class="img-fluid w-100" style="object-fit: cover;"
+                                src="https://picsum.photos/id/123/800">
+                        </div>
+                        <div class="container post-footer">
+                            <div class="row post-likes-num fw-bold mb-0">
+                                <p class="mb-0">256 Likes</p>
+                            </div>
+                            <div class="row post-caption mt-0">
+                                <p class="mb-2">This is an example of a very good photo that you can post on instagram
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- post 2 -->
+                    <div class="container post-box border col-6 px-0 mb-4">
+                        <div class="container post-header d-flex justify-content-between">
+                            <h3 class="my-2">Trecking it is so relaxing</h3>
+                            <p class="post-date mt-2">01-30</p>
+                        </div>
+                        <div class="container post-body p-0">
+                            <img class="img-fluid w-100" style="object-fit: cover;"
+                                src="https://picsum.photos/id/432/800">
+                        </div>
+                        <div class="container post-footer">
+                            <div class="row post-likes-num fw-bold mb-0">
+                                <p class="mb-0">871 Likes</p>
+                            </div>
+                            <div class="row post-caption mt-0">
+                                <p class="mb-2">This is an example of a very good photo that you can post on instagram
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- post 3 -->
+                    <div class="container post-box border col-6 px-0 mb-4">
+                        <div class="container post-header d-flex justify-content-between">
+                            <h3 class="my-2">Photo session!</h3>
+                            <p class="post-date mt-2">04-09</p>
+                        </div>
+                        <div class="container post-body p-0">
+                            <img class="img-fluid w-100" style="object-fit: cover;"
+                                src="https://picsum.photos/id/951/800">
+                        </div>
+                        <div class="container post-footer">
+                            <div class="row post-likes-num fw-bold mb-0">
+                                <p class="mb-0">1051 Likes</p>
+                            </div>
+                            <div class="row post-caption mt-0">
+                                <p class="mb-2">This is an example of a very good photo that you can post on instagram
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- post 4 -->
+                    <div class="container post-box border col-6 px-0 mb-4">
+                        <div class="container post-header d-flex justify-content-between">
+                            <h3 class="my-2">Love You Guys</h3>
+                            <p class="post-date mt-2">07-23</p>
+                        </div>
+                        <div class="container post-body p-0">
+                            <img class="img-fluid w-100" style="object-fit: cover;"
+                                src="https://picsum.photos/id/654/800">
+                        </div>
+                        <div class="container post-footer">
+                            <div class="row post-likes-num fw-bold mb-0">
+                                <p class="mb-0">512 Likes</p>
+                            </div>
+                            <div class="row post-caption mt-0">
+                                <p class="mb-2">This is an example of a very good photo that you can post on instagram
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mis scripts necesarios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"
+        integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"
+        integrity="sha512-a6ctI6w1kg3J4dSjknHj3aWLEbjitAXAjLDRUxo2wyYmDFRcz2RJuQr5M3Kt8O/TtUSp8n2rAyaXYy1sjoKmrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
